@@ -46,7 +46,7 @@ def generate(
 
     for obj in [obj for obj in data[type] if index in obj and obj[index].lower() in [value.lower()]]:
         (output / type / index / obj[index].lower()).mkdir(parents=True, exist_ok=True)
-        with open(output / type / index / obj[index].lower() / "data.json", "wb") as f:
+        with open(output / type / index / obj[index].lower() / "index.json", "wb") as f:
             f.write(orjson.dumps(obj, option=orjson.OPT_INDENT_2))
 
 if __name__ == "__main__":
