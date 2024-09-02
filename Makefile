@@ -5,13 +5,18 @@ targets = $(addsuffix /index.json,$(addprefix api/airlines/iata/,$(AIRLINE_IATA)
 .PHONY: help
 help:
 	@echo "make help"
-	@echo "make build"
+	@echo "make pip"
 	@echo "make clean"
+	@echo "make build"
 
+.PHONY: pip
+pip:
+	@python3 -m pip install -r requirements.txt
 .PHONY: clean
 clean:
 	@rm -rf api/
 
+.PHONY: build
 build: $(targets)
 	@mkdir -p api
 
