@@ -24,7 +24,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Build 🏗️
       run: |
-        make pip build
+        make pip
+        make build
     - name: Upload 🚀
       uses: actions/upload-pages-artifact@v3
       with:
