@@ -1,0 +1,31 @@
+{
+    "airlines": [
+        {
+            "iata": "QF",
+            "name": "Qantas",
+            "country": "Australia",
+            "icao": "QFA",
+            "active": true
+        },
+        {
+            "iata": "VA",
+            "name": "Virgin Australia",
+            "country": "Australia",
+            "icao": "VOZ",
+            "active": true
+        },
+        {
+            "iata": "JQ",
+            "name": "Jetstar",
+            "country": "Australia",
+            "icao": "JST",
+            "active": true
+        },
+        {
+            "iata": "DJ",
+            "name": "Virgin Blue",
+            "country": "Australia",
+            "active": false
+        }
+    ]
+}

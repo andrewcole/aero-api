@@ -1,0 +1,38 @@
+---
+name: Deploy aero-api to GitHub Pages 🚀
+on:
+  push:
+    branches:
+    - $default-branch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v4
+    - name: Build 🏗️
+      run: |
+        make build
+    - name: Upload 🚀
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./api
+        
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy 🚀
+      uses: actions/deploy-pages@v4
