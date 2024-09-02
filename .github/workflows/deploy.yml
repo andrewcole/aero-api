@@ -3,7 +3,7 @@ name: Deploy aero-api to GitHub Pages 🚀
 on:
   push:
     branches:
-    - $default-branch
+    - master
   workflow_dispatch:
 
 permissions:
